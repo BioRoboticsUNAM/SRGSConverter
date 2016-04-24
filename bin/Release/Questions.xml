@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+  <question>
+    <q>How many rings has the Olympic flag?</q>
+    <a>Five</a>
+  </question>
+  <question>
+    <q>Who was the first man in space?</q>
+    <a>Yuri Gagarin</a>
+  </question>
+  <question>
+    <q>In which year RoboCup was founded?</q>
+    <a>1997</a>
+  </question>
+  <question>
+    <q>Who played and lost against Deep Blue in 1996?</q>
+    <a>Gary Kaspárov</a>
+  </question>
+  <question>
+    <q>What is the name of the Simpson's oldest daughter?</q>
+    <a>Lisa</a>
+  </question>
+  <question>
+    <q>How many countries are in Europe?</q>
+    <a>50</a>
+  </question>
+  <question>
+    <q>Who was Aristotle's teacher?</q>
+    <a>Plato</a>
+  </question>
+  <question>
+    <q>What is the capital of Japan?</q>
+    <a>Tokyo</a>
+  </question>
+  <question>
+    <q>What is the capital of Poland?</q>
+    <a>Warsaw</a>
+  </question>
+  <question>
+    <q>What time is it?</q>
+    <a>(Robot must answer with the current time)</a>
+  </question>
+  <question>
+    <q>What is the name of the USS Enterprise's commander?</q>
+    <a>James T. Kirk</a>
+  </question>
+  <question>
+    <q>What is the name of Luke Skaywalker's father?</q>
+    <a>Anakin Skywalker / Darth Vader</a>
+  </question>
+  <question>
+    <q>What's the name of the composer of The Four Seasons?</q>
+    <a>Antonio Vivaldi</a>
+  </question>
+  <question>
+    <q>For which name is better known La Gioconda?</q>
+    <a>Mona Lisa</a>
+  </question>
+  <question>
+    <q>What was the first James Bond film?</q>
+    <a>Dr No</a>
+  </question>
+  <question>
+    <q>What was discovered in 1922 by Howard Carter?</q>
+    <a>Tutankamen tomb</a>
+  </question>
+  <question>
+    <q>What is the national flower of Japan?</q>
+    <a>Chrysanthemum</a>
+  </question>
+  <question>
+    <q>Where in France do claret wines come from?</q>
+    <a>Bordeaux</a>
+  </question>
+  <question>
+    <q>What is your name?</q>
+    <a>(Robot must answer with its own name)</a>
+  </question>
+  <question>
+    <q>What is your team's name?</q>
+    <a>(Robot must answer with the team name)</a>
+  </question>
+  <question>
+    <q>What is the national national fruit of Serbia?</q>
+    <a>Plum</a>
+  </question>
+  <question>
+    <q>On which national flag is there an eagle and a snake?</q>
+    <a>Mexico</a>
+  </question>
+  <question>
+    <q>St Boniface is the Patron Saint of which country?</q>
+    <a>Germany</a>
+  </question>
+  <question>
+    <q>A pearmain is what type of fruit?</q>
+    <a>Apple</a>
+  </question>
+  <question>
+    <q>In Chinese mythology what is Taimut?</q>
+    <a>A Dragon</a>
+  </question>
+  <question>
+    <q>What is ikebana?</q>
+    <a>Flower arranging</a>
+  </question>
+  <question>
+    <q>A bind is a group of what type of fish?</q>
+    <a>Salmon</a>
+  </question>
+  <question>
+    <q>Which leader lives in the Potola?</q>
+    <a>Dalai Lama</a>
+  </question>
+  <question>
+    <q>Who saved Andromeda from the sea monster?</q>
+    <a>Perseus</a>
+  </question>
+  <question>
+    <q>What is the answer to the ultimate question about life, the universe and everything?</q>
+    <a>42</a>
+  </question>
+  <question>
+    <q>What is the oldest most widely used drug on earth?</q>
+    <a>Alcohol</a>
+  </question>
+  <question>
+    <q>What is the worlds most popular green vegetable?</q>
+    <a>Lettuce</a>
+  </question>
+  <question>
+    <q>What is Erse?</q>
+    <a>Irish Gaelic language</a>
+  </question>
+  <question>
+    <q>Which famous person invented the cat flap?</q>
+    <a>Isaac Newton</a>
+  </question>
+  <question>
+    <q>Which country grows the most potatoes?</q>
+    <a>Russia</a>
+  </question>
+  <question>
+    <q>What fish can hold objects in its tail?</q>
+    <a>Sea Horse</a>
+  </question>
+  <question>
+    <q>Greek mathematician cylinder enclosed sphere carved on grave?</q>
+    <a>Archimedes</a>
+  </question>
+  <question>
+    <q>Who was Agrippa's son?</q>
+    <a>Nero</a>
+  </question>
+  <question>
+    <q>An alloy of Iron - Chromium and Nickel makes what?</q>
+    <a>Stainless Steel</a>
+  </question>
+  <question>
+    <q>Freyr was the Norse god of what?</q>
+    <a>Fertility</a>
+  </question>
+  <question>
+    <q>Who was known as the Little Brown Saint?</q>
+    <a>Ghandi</a>
+  </question>
+  <question>
+    <q>Who was the Goddess of the rainbow?</q>
+    <a>Iris</a>
+  </question>
+  <question>
+    <q>What is a quadriga?</q>
+    <a>Roman 4 horse chariot</a>
+  </question>
+  <question>
+    <q>Which country grew the first Orange?</q>
+    <a>China</a>
+  </question>
+  <question>
+    <q>Which country was the first to introduce old age pensions?</q>
+    <a>Germany</a>
+  </question>
+  <question>
+    <q>Which race destroyed Vulcan Planet?</q>
+    <a>Romulans</a>
+  </question>
+  <question>
+    <q>William Hartnell was the first to play what TV character?</q>
+    <a>Dr. Who</a>
+  </question>
+  <question>
+    <q>The murder of Gonzago was performed in what Shakespeare play?</q>
+    <a>Hamlet</a>
+  </question>
+  <question>
+    <q>Which goddess sprang full grown from the forehead of her father Zeus?</q>
+    <a>Athena</a>
+  </question>
+  <question>
+    <q>Which insect has the best eyesight?</q>
+    <a>Dragonfly</a>
+  </question>
+</questions>

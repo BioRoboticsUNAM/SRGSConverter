@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<categories>
+  <category name="beverages" defaultLocation="shelf" room="dining room">
+    <object name="milk" difficulty="easy" />
+    <object name="coke" difficulty="easy" />
+    <object name="orange juice" difficulty="easy" />
+    <object name="beer" difficulty="high" />
+  </category>
+  <category name="fruits" defaultLocation="kitchen table" room="kitchen">
+    <object name="apple" type="alike" difficulty="moderate" />
+    <object name="banana" type="alike" difficulty="moderate" />
+    <object name="orange" type="alike" difficulty="moderate" />
+    <object name="pear" type="alike" difficulty="moderate" />
+  </category>
+  <category name="snacks" defaultLocation="dinner table" room="dining room">
+    <object name="lays" difficulty="moderate" />
+    <object name="crackers" difficulty="easy" />
+    <object name="pringles" difficulty="easy" />
+    <object name="chocolate" difficulty="easy" />
+  </category>
+  <category name="cleaning stuff" defaultLocation="bathroom locker" room="bathroom">
+    <object name="cloth" type="alike" difficulty="high" />
+    <object name="detergent" difficulty="high" />
+    <object name="sponge" difficulty="easy" />
+    <object name="brush" difficulty="high" />
+  </category>
+</categories>

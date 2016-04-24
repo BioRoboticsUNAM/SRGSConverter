@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rooms>
+  <room name="bedroom">
+    <location name="chair" isBeacon="true" />
+    <location name="bin" isPlacement="true" />
+    <location name="bed" isBeacon="true" isPlacement="true" />
+  </room>
+  <room name="bathroom">
+    <location name="bathroom locker" isPlacement="true" />
+  </room>
+  <room name="dining room">
+    <location name="shelf" isPlacement="true" />
+    <location name="dinner table" isPlacement="true" />
+  </room>
+  <room name="hall" />
+  <room name="kitchen">
+    <location name="kitchen table" isPlacement="true" />
+  </room>
+  <room name="corridor" />
+</rooms>
