@@ -4,11 +4,10 @@ using System.IO;
 using RoboCup.AtHome.CommandGenerator;
 using RoboCup.AtHome.CommandGenerator.Containers;
 
-namespace SGRSConverter
+namespace SRGSConverter
 {
 	public class Program
 	{
-
 		/// <summary>
 		/// The entry point of the program, where the program control starts and ends.
 		/// </summary>
@@ -25,11 +24,17 @@ namespace SGRSConverter
 				Directory.CreateDirectory("srgs");
 			foreach (Grammar g in gs)
 			{
-				Console.Write("Converting {0}... ", g.Name);
-				string output = Path.Combine("srgs", String.Format("{0}_srgs.xml", g.Name));
-				GrammarConverter.SaveToSRGS(g, output, gestures, locations, names, objects, questions);
-				Console.WriteLine("Saved as {0}",output);
-				Console.WriteLine();
+				try
+				{
+					Console.Write("Converting {0}... ", g.Name);
+					string output = Path.Combine("srgs", String.Format("{0}_srgs.xml", g.Name));
+					GrammarConverter.SaveToSRGS(g, output, gestures, locations, names, objects, questions);
+					Console.WriteLine("Saved as {0}", output);
+					Console.WriteLine();
+				}
+				catch (Exception ex) {
+					Console.WriteLine(ex.Message);
+				}
 			}
 			Console.WriteLine("Done!");
 		}
