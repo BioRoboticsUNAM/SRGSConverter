@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRGSConverter", "SRGSConverter.csproj", "{E4C216B9-4AF0-4444-9954-AA9E8A89EE8D}"
 EndProject
 Global
