@@ -1,6 +1,6 @@
 ##############################################################################
 #
-# Category1 Grammar
+# Eegpsr_cat4 Grammar
 # 
 # Author:  Mauricio Matamoros
 # Date:    April 2017
@@ -197,61 +197,104 @@
 *
 ********************************************************************/
 
-; grammar name Category I
-; grammar tier Easy
-; import gpsr_common.txt
+; grammar name Cat4 - People & Activity Recognition
+; grammar tier High
+
+$Main = $ppar | $par
+$ppar = $polite $par
 
 
-$Main     = $deliver
-$Main     = $fndppl
-$Main     = $fndobj
 
-##############################################################################
-#
-# Production Rules required by common.txt
-#
-##############################################################################
-; Define an object type
-$object   = {kobject}
-
-; Rule for finding a specific (named) person
-$findp    = $vbfind ( {name} | a person | someone )
-
-; A named or described person in the given place
-$whowhere = {name} at the {beacon 1}
-
-##############################################################################
-#
-# Manipulation
-#
-##############################################################################
-$deliver  = $vbbring (me | to $whowhere) the {kobject} from the {placement}
-$deliver  = $takefrom and ($delivme | $delivat)
-$deliver  = $takefrom and $place
+; Greet person matching description
+$par   	= greet the $person in the $room
+; Bring to person matching description
+$par   	= bring the {object} to the $person in the $room
+; Meet and greet a person
+$par   	= $mgreet {void meta:There is only one person at {beacon 1}}
+; Count people
+$par   	= tell me how many $people are in the $room.
+$par   	= offer something to (eat | drink) to all the $people in the $room
+; Follow & guide
+$par   	= find the $fgwho and follow {pron}
+$par   	= find the $fgwho and guide {pron} to the (exit | {room 2})
 
 
-##############################################################################
-#
-# Find people
-#
-##############################################################################
-$fndppl   = Tell me the name of the person at the {beacon}
-$fndppl   = Tell me the name of the person in the {room}
 
-##############################################################################
-#
-# Find objects
-#
-##############################################################################
-$fndobj   = $vbfind the {kobject?} in the {room}
+$mgreet = Meet {name} at the {beacon 1}, then (greet | find) {pron} in the $room
+$fgwho	= $person in the $room
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 ##############################################################################
 #
-# Rules
+# People
 #
 ##############################################################################
+$people = $ppl
+$people = $posture $ppl
+$people = {gesture} $ppl
+$people = $ppl wearing $outfit
+$people = $color-dressed $ppl
+
+$posture= standing | sitting | lying
+$ppl    = people | children | elders | men | women
+
+##############################################################################
+#
+# Person
+#
+##############################################################################
+$person = child
+$person = $lpdesc (man | woman | person)
+$person = (man | woman | person) $rpdesc
+$lpdesc = {gesture} | tallest | smallest | oldest | youngest | slimmest | fattest
+$rpdesc = dressed with $color $outfit
+$rpdesc = wearing ($apparel | $color $outfit) 
+
+$color	= blue | yellow | black | white | red | orange | gray
+$outfit = (T-shirt) | shirt | blouse | shoes | sweater | pants | coat | jacket
+$apparel = hat | glasses | necklace | tie | earrings
+
+
+##############################################################################
+#
+# Room
+#
+##############################################################################
+$room   = {room 1 meta:At least three people must be in the {room 1}}
+
+##############################################################################
+#
+# Polite
+#
+##############################################################################
+$polite = Please
+$polite = Could you
+$polite = Robot please
+$polite = Could you please
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 ##############################################################################
 #
-# Category1 Grammar
+# Eegpsr_cat5 Grammar
 # 
 # Author:  Mauricio Matamoros
 # Date:    April 2017
@@ -197,14 +197,15 @@
 *
 ********************************************************************/
 
-; grammar name Category I
-; grammar tier Easy
-; import gpsr_common.txt
+; grammar name Cat5 - Incomplete Information
+; grammar tier High
+; import eegpsr_common.txt
 
+$Main     = $pinc | $inc
 
-$Main     = $deliver
-$Main     = $fndppl
-$Main     = $fndobj
+$pinc    = $polite $inc
+$inc     = $incomplete
+
 
 ##############################################################################
 #
@@ -212,46 +213,28 @@ $Main     = $fndobj
 #
 ##############################################################################
 ; Define an object type
-$object   = {kobject}
+$object   = {object}
 
 ; Rule for finding a specific (named) person
-$findp    = $vbfind ( {name} | a person | someone )
+;$findp    = $vbfind a $pgenders
+$findp    = $vbfind a {gesture} person
+;$findp    = $vbfind a $pose person
 
-; A named or described person in the given place
-$whowhere = {name} at the {beacon 1}
-
-##############################################################################
-#
-# Manipulation
-#
-##############################################################################
-$deliver  = $vbbring (me | to $whowhere) the {kobject} from the {placement}
-$deliver  = $takefrom and ($delivme | $delivat)
-$deliver  = $takefrom and $place
+; A named or described person at the given place
+$whowhere = {name 1 meta: {name 1} is at the {beacon 1}}
+$whowhere = a {gesture 1} person {void meta: The {gesture 1} person is in the {room}}
 
 
 ##############################################################################
 #
-# Find people
+# Incomplete commands
 #
 ##############################################################################
-$fndppl   = Tell me the name of the person at the {beacon}
-$fndppl   = Tell me the name of the person in the {room}
+$incomplete  = $vbfollow {name 1 meta: {name 1} is at the {beacon 1}}
+$incomplete  = $cmanwarn $vbbring me (a | some) {object?}
+$incomplete  = $cmanwarn $vbdeliver {object?} to $someone
+$incomplete  = $vbguide {name 1 meta: {name 1} is at the {beacon 1}} to the {beacon 2}
+$incomplete  = meet $inguidewho and $vbguide {pron}
+$incomplete  = $gobeacon, meet $inguidewho, and $vbguide {pron}
 
-##############################################################################
-#
-# Find objects
-#
-##############################################################################
-$fndobj   = $vbfind the {kobject?} in the {room}
-
-
-
-##############################################################################
-#
-# Rules
-#
-##############################################################################
-
-
-
+$inguidewho  = {name 1 meta: {name 1} must be taken from {beacon 1} to {beacon 2}, but he will get lost before reaching it}

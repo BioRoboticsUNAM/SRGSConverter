@@ -1,6 +1,6 @@
 ##############################################################################
 #
-# Category1 Grammar
+# Eegpsr_cat3 Grammar
 # 
 # Author:  Mauricio Matamoros
 # Date:    April 2017
@@ -197,14 +197,17 @@
 *
 ********************************************************************/
 
-; grammar name Category I
-; grammar tier Easy
-; import gpsr_common.txt
+; grammar name Cat3 - Navigation & People Tracking
+; grammar tier High
+; import eegpsr_common.txt
 
+$Main     = $pfollow | $afollow
+$Main     = $pguide | $aguide
+$Main     = $pnavout | $navout
 
-$Main     = $deliver
-$Main     = $fndppl
-$Main     = $fndobj
+$pfollow  = $polite $afollow
+$pguide   = $polite $aguide
+$pnavout  = $polite $navout
 
 ##############################################################################
 #
@@ -212,46 +215,59 @@ $Main     = $fndobj
 #
 ##############################################################################
 ; Define an object type
-$object   = {kobject}
+$object   = {aobject}
 
 ; Rule for finding a specific (named) person
-$findp    = $vbfind ( {name} | a person | someone )
+$findp    = $vbfind a person
+$findp    = $vbfind a $pgenders
+$findp    = $vbfind a {gesture} person
+; $findp    = $vbfind a $pose person
 
 ; A named or described person in the given place
-$whowhere = {name} at the {beacon 1}
+$whowhere = a {gesture} person $outside
 
 ##############################################################################
 #
-# Manipulation
+# Follow & Guide people
 #
 ##############################################################################
-$deliver  = $vbbring (me | to $whowhere) the {kobject} from the {placement}
-$deliver  = $takefrom and ($delivme | $delivat)
-$deliver  = $takefrom and $place
-
-
-##############################################################################
-#
-# Find people
-#
-##############################################################################
-$fndppl   = Tell me the name of the person at the {beacon}
-$fndppl   = Tell me the name of the person in the {room}
-
-##############################################################################
-#
-# Find objects
-#
-##############################################################################
-$fndobj   = $vbfind the {kobject?} in the {room}
+$afollow  = {void meta: The Professional Walker must go from {room 1} to outside the arena and walk between a crowd of at least 5 people before heading to {room 2} } $follow
+$afollow  = $gobeacon, $vbfollow the person in front of you {void meta: The Professional Walker must guide the robot outside the arena} and $goplace
 
 
 
 ##############################################################################
 #
-# Rules
+# Follow & Guide people
 #
 ##############################################################################
+$afollow  = $gobeacon, $vbfollow the person in front of you {void meta: The Professional Walker must guide the robot outside the arena}, $vbguide that person to the {beacon 2} $gdmeta 
+
+
+##############################################################################
+#
+# Guide people
+#
+##############################################################################
+$aguide    = Leave the arena, find a person out there, and $vbguide that person to the {beacon 2}
 
 
 
+##############################################################################
+#
+# Navigate outside
+#
+##############################################################################
+$navout   = $vbdeliver the $object to $whowhere
+$navout   = $findp $outside and $talk
+$navout   = Leave the arena, $findp, and $talk
+
+
+
+
+##############################################################################
+#
+# $rules
+#
+##############################################################################
+$outside  =  outside the arena
